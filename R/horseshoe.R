@@ -23,11 +23,11 @@ horseshoe <- function(x, y, ..., verbose = TRUE) {
 #'
 #' @inheritParams stats::predict
 #' @param newdata Matrix of covariates, dimension n*p.
-#' @param posterior `"mean"` or `"median"`.
+#' @param posterior `"mean"` or `"median"` (default).
 #' @export
 predict.horseshoe <- function(object,
                               newdata,
-                              posterior = c("mean", "median"),
+                              posterior = c("median", "mean"),
                               ...) {
   beta <- c(mean = "BetaHat", median = "BetaMedian")[match.arg(posterior)]
 
